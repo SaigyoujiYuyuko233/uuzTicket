@@ -1,77 +1,44 @@
-@extends('layouts.app')
+@extends("layouts.auth")
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+@section("title") 注册 @endsection
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+@section("head")
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    <style>
+        body{
+            background-image: url("{{ asset("/images/reg-background.jpg") }}");
+        }
+    </style>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+@endsection
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+@section("form-title") 注册 @endsection
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+@section("form")
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="mdui-textfield mdui-textfield-floating-label">
+        <i class="mdui-icon material-icons">account_circle</i>
+        <label class="mdui-textfield-label">用户名</label>
+        <textarea class="mdui-textfield-input" name="username"></textarea>
+        <div class="mdui-textfield-helper">4-16个字符 / 允许: A-Z大小写 数字 下/中划线</div>
     </div>
-</div>
+
+    <div class="mdui-textfield mdui-textfield-floating-label">
+        <i class="mdui-icon material-icons">&#xe0da;</i>
+        <label class="mdui-textfield-label">密码</label>
+        <textarea class="mdui-textfield-input" name="password"></textarea>
+        <div class="mdui-textfield-helper">至少8位</div>
+    </div>
+
+    <div class="mdui-textfield mdui-textfield-floating-label">
+        <i class="mdui-icon material-icons">contact_mail</i>
+        <label class="mdui-textfield-label">联系方式</label>
+        <textarea class="mdui-textfield-input" name="contact"></textarea>
+        <div class="mdui-textfield-helper">邮箱</div>
+    </div>
+
+    <button class="submit mdui-btn mdui-btn-block mdui-color-pink-400 mdui-ripple" type="submit">注册</button>
+
 @endsection
