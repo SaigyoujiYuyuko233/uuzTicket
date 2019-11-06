@@ -75,6 +75,17 @@
             border-bottom: 1200px solid rgba(255, 255, 255, 1);
             border-left: 140px solid transparent;
         }
+
+        @media only screen and (max-width: 667px) {
+            .form-cover{
+                width: 100%;
+                padding-top: 8%;
+            }
+
+            .triangle{
+                display: none;
+            }
+        }
     </style>
 
     @yield('head')
