@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,13 +19,20 @@ use Illuminate\Support\Facades\Route;
 Route::prefix("/auth")->group(function () {
 
     // register pages
-    Route::get("/register", function () {
-        return view("auth.register");
-    });
+    Route::get("/register", 'Auth\RegisterController@showRegistrationForm');
 
     // login pages
-    Route::get("/login", function () {
-        return view("auth.login");
+    Route::get("/login", 'Auth\LoginController@showLoginForm');
+
+    // auth post entry
+    Route::prefix("/post")->group(function () {
+
+        // registry
+        //Route::post("/register", "");
+
+        // login
+        //Route::post("/login", "");
+
     });
 
 });
