@@ -20,9 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("/auth")->group(function () {
 
-    // register
+    // register pages
     Route::get("/register", function () {
         return view("auth.register");
+    });
+
+    // login pages
+    Route::get("/login", function () {
+        return view("auth.login");
     });
 
 });
