@@ -117,7 +117,7 @@
 
 <div class="form-cover">
 
-    <div class="form mdui-center">
+    <div class="form mdui-center mdui-typo">
         <div class="form-title"> @yield('form-title') </div>
 
             @yield("form")

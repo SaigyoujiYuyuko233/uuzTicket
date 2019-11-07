@@ -28,6 +28,9 @@
         <textarea class="mdui-textfield-input" name="password"></textarea>
     </div>
 
+    <a href="{{ route('register') }}" class="tips-text mdui-float-left">没有账号? 戳我注册</a>
+    <!--TODO: reset password url-->
+    <a href="" class="tips-text mdui-float-right" style="margin-left: 0;">找回密码</a>
     <button class="submit mdui-btn mdui-btn-block mdui-color-pink-400 mdui-ripple" type="submit">登陆</button>
 
 @endsection

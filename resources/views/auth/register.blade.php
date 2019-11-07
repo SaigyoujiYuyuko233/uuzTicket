@@ -69,6 +69,8 @@
 
         </div>
 
+        <a href="{{ route('login') }}" class="tips-text mdui-float-left">已有账号? 戳我登陆</a>
+
         <button class="submit mdui-btn mdui-btn-block mdui-color-pink-400 mdui-ripple" type="submit">注册</button>
     </form>
 
