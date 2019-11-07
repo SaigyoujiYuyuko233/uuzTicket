@@ -28,11 +28,10 @@ Route::prefix("/auth")->group(function () {
     Route::prefix("/post")->group(function () {
 
         // registry
-        //Route::post("/register", "");
+        Route::post("/register", "Auth\RegisterController@register")->name("regEntry");
 
         // login
         //Route::post("/login", "");
-
     });
 
 });
