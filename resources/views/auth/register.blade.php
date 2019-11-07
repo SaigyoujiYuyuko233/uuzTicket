@@ -17,28 +17,59 @@
 
 
 @section("form")
+    <form action="{{ route("regEntry") }}" method="post">
+        {{ csrf_field() }}
 
-    <div class="mdui-textfield mdui-textfield-floating-label">
-        <i class="mdui-icon material-icons">account_circle</i>
-        <label class="mdui-textfield-label">用户名</label>
-        <textarea class="mdui-textfield-input" name="username"></textarea>
-        <div class="mdui-textfield-helper">4-16个字符 / 允许: A-Z大小写 数字 下/中划线</div>
-    </div>
+        <div class="mdui-textfield mdui-textfield-floating-label" id="username-field">
+            <i class="mdui-icon material-icons">account_circle</i>
+            <label class="mdui-textfield-label">用户名</label>
+            <textarea class="mdui-textfield-input" name="username" maxlength="16"></textarea>
 
-    <div class="mdui-textfield mdui-textfield-floating-label">
-        <i class="mdui-icon material-icons">&#xe0da;</i>
-        <label class="mdui-textfield-label">密码</label>
-        <textarea class="mdui-textfield-input" name="password"></textarea>
-        <div class="mdui-textfield-helper">至少8位</div>
-    </div>
+            @if ($errors->first('username') != null)
+                <script>
+                    $("#username-field").addClass("mdui-textfield-invalid");
+                </script>
 
-    <div class="mdui-textfield mdui-textfield-floating-label">
-        <i class="mdui-icon material-icons">contact_mail</i>
-        <label class="mdui-textfield-label">联系方式</label>
-        <textarea class="mdui-textfield-input" name="contact"></textarea>
-        <div class="mdui-textfield-helper">邮箱</div>
-    </div>
+                <div class="mdui-textfield-error">{{ $errors->first('username') }}</div>
+            @else
+                <div class="mdui-textfield-helper">4-16个字符 / 字母大小写 数字 下/中划线</div>
+            @endif
+        </div>
 
-    <button class="submit mdui-btn mdui-btn-block mdui-color-pink-400 mdui-ripple" type="submit">注册</button>
+        <div class="mdui-textfield mdui-textfield-floating-label" id="password-field">
+            <i class="mdui-icon material-icons">&#xe0da;</i>
+            <label class="mdui-textfield-label">密码</label>
+            <textarea class="mdui-textfield-input" name="password"></textarea>
+
+            @if ($errors->first('password') != null)
+                <script>
+                    $("#password-field").addClass("mdui-textfield-invalid");
+                </script>
+
+                <div class="mdui-textfield-error">{!! $errors->first('password') !!}</div>
+            @else
+                <div class="mdui-textfield-helper">最小长度: 8</div>
+            @endif
+        </div>
+
+        <div class="mdui-textfield mdui-textfield-floating-label" id="email-field">
+            <i class="mdui-icon material-icons">contact_mail</i>
+            <label class="mdui-textfield-label">邮箱</label>
+            <textarea class="mdui-textfield-input" name="email"></textarea>
+
+            @if ($errors->first('email') != null)
+                <script>
+                    $("#email-field").addClass("mdui-textfield-invalid");
+                </script>
+
+                <div class="mdui-textfield-error">{{ $errors->first('email') }}</div>
+            @else
+                <div class="mdui-textfield-helper">任意可用邮箱</div>
+            @endif
+
+        </div>
+
+        <button class="submit mdui-btn mdui-btn-block mdui-color-pink-400 mdui-ripple" type="submit">注册</button>
+    </form>
 
 @endsection
