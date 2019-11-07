@@ -23,7 +23,7 @@
         <div class="mdui-textfield mdui-textfield-floating-label" id="username-field">
             <i class="mdui-icon material-icons">account_circle</i>
             <label class="mdui-textfield-label">用户名</label>
-            <textarea class="mdui-textfield-input" name="username" maxlength="16"></textarea>
+            <input class="mdui-textfield-input" name="username" maxlength="16">
 
             @if ($errors->first('username') != null)
                 <script>
@@ -39,7 +39,7 @@
         <div class="mdui-textfield mdui-textfield-floating-label" id="password-field">
             <i class="mdui-icon material-icons">&#xe0da;</i>
             <label class="mdui-textfield-label">密码</label>
-            <textarea class="mdui-textfield-input" name="password"></textarea>
+            <input class="mdui-textfield-input" name="password" type="password">
 
             @if ($errors->first('password') != null)
                 <script>
@@ -55,7 +55,7 @@
         <div class="mdui-textfield mdui-textfield-floating-label" id="email-field">
             <i class="mdui-icon material-icons">contact_mail</i>
             <label class="mdui-textfield-label">邮箱</label>
-            <textarea class="mdui-textfield-input" name="email"></textarea>
+            <input class="mdui-textfield-input" name="email">
 
             @if ($errors->first('email') != null)
                 <script>
