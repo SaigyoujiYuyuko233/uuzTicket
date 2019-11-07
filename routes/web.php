@@ -11,6 +11,9 @@
 |
 */
 
+Route::get("/", function () {
+    return 'you are in!';
+})->middleware(['auth']);
 
 /*
  * User auth routers
