@@ -14,6 +14,8 @@
     <link href="{{ asset("/favicon.ico") }}" rel="icon">
     <link href="https://cdn.bootcss.com/mdui/0.4.3/css/mdui.min.css" rel="stylesheet">
 
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
     <style>
         html {
             height: 100%;
@@ -47,14 +49,14 @@
             float: right;
 
             height: calc(100% - 2px);
-            width: 360px;
+            width: 380px;
 
             border-top: 2px solid #448AFF;
         }
 
         .form-cover .form {
             padding-top: 120px;
-            width: 80%;
+            width: 86%;
         }
 
         .form-cover .form .form-title {
@@ -65,6 +67,9 @@
         .form-cover .form .submit {
             margin-top: 24px;
             border-radius: 4px;
+
+            width: calc(100% - 56px);
+            float: right;
         }
 
         .triangle {
@@ -79,7 +84,17 @@
         @media only screen and (max-width: 667px) {
             .form-cover{
                 width: 100%;
-                padding-top: 8%;
+            }
+
+            .form-cover .form {
+                padding-top: 25%;
+            }
+
+            .form-cover .form .submit {
+                margin-top: 24px;
+                border-radius: 4px;
+
+                width: 100%;
             }
 
             .triangle{
@@ -100,9 +115,8 @@
     <div class="form mdui-center">
         <div class="form-title"> @yield('form-title') </div>
 
-        <form>
             @yield("form")
-        </form>
+
     </div>
 
 </div>
