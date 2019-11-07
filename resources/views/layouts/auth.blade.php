@@ -55,7 +55,7 @@
         }
 
         .form-cover .form {
-            padding-top: 120px;
+            padding-top: calc(40% - 100px);
             width: 86%;
         }
 
@@ -65,11 +65,16 @@
         }
 
         .form-cover .form .submit {
-            margin-top: 24px;
+            margin-top: 4px;
             border-radius: 4px;
 
             width: calc(100% - 56px);
             float: right;
+        }
+
+        .form-cover .form .tips-text {
+            padding-top: 24px;
+            margin-left: 54px;
         }
 
         .triangle {
@@ -77,7 +82,7 @@
             float: right;
 
             opacity: 0.95;
-            border-bottom: 1200px solid rgba(255, 255, 255, 1);
+            border-bottom: 1800px solid rgba(255, 255, 255, 1);
             border-left: 140px solid transparent;
         }
 
@@ -87,7 +92,7 @@
             }
 
             .form-cover .form {
-                padding-top: 25%;
+                padding-top: calc(20% - 20px);
             }
 
             .form-cover .form .submit {
