@@ -7,9 +7,7 @@
     <meta charset="UTF-8">
     <title> @yield('title') - {{ env("APP_NAME") }} </title>
 
-    <meta name="viewport" content="width=device-width">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link href="{{ asset("/favicon.ico") }}" rel="icon">
     <link href="https://cdn.bootcss.com/mdui/0.4.3/css/mdui.min.css" rel="stylesheet">
