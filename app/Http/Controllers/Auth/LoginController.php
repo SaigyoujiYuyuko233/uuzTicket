@@ -38,13 +38,20 @@ class LoginController extends Controller
     }
 
     /**
-     * For showing the login page
+     * Get the login username to be used by the controller.
      *
-     * @return view
+     * @return string
      */
-    public function showLoginForm()
+    public function username()
     {
-        return view("auth.login");
+        // get user input
+        $login = request()->input('username');
+
+        // determine username or email
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        request()->merge([$field => $login]);
+
+        return $field;
     }
 
 }
