@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1396FF;
+}

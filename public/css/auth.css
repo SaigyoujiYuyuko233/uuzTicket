@@ -1,0 +1,70 @@
+@import "common.css";
+
+.form-cover {
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0.95;
+
+    float: right;
+
+    height: calc(100% - 2px);
+    width: 380px;
+
+    border-top: 2px solid #448AFF;
+}
+
+.form-cover .form {
+    padding-top: calc(40% - 100px);
+    width: 86%;
+}
+
+.form-cover .form .form-title {
+    text-align: center;
+    font-size: 34px;
+}
+
+.form-cover .form .submit {
+    margin-top: 4px;
+    border-radius: 4px;
+
+    width: calc(100% - 56px);
+    float: right;
+}
+
+.form-cover .form .tips-text {
+    padding-top: 24px;
+    margin-left: 54px;
+}
+
+.triangle {
+
+    float: right;
+
+    opacity: 0.95;
+    border-bottom: 1800px solid rgba(255, 255, 255, 1);
+    border-left: 140px solid transparent;
+}
+
+@media only screen and (max-width: 667px) {
+    .form-cover{
+        width: 100%;
+    }
+
+    .form-cover .form {
+        padding-top: calc(20% - 60px);
+    }
+
+    .form-cover .form .submit {
+        border-radius: 4px;
+
+        width: 100%;
+    }
+
+    .form-cover .form .tips-text {
+        padding-top: 24px;
+        margin-left: 0 !important;
+    }
+
+    .triangle{
+        display: none;
+    }
+}
