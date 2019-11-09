@@ -92,14 +92,18 @@
             }
 
             .form-cover .form {
-                padding-top: calc(20% - 20px);
+                padding-top: calc(20% - 60px);
             }
 
             .form-cover .form .submit {
-                margin-top: 24px;
                 border-radius: 4px;
 
                 width: 100%;
+            }
+
+            .form-cover .form .tips-text {
+                padding-top: 24px;
+                margin-left: 0 !important;
             }
 
             .triangle{
