@@ -12,7 +12,7 @@
 */
 
 Route::get("/", function () {
-    return 'you are in!';
+    return view('home');
 })->middleware(['auth']);
 
 /*
@@ -39,7 +39,11 @@ Route::prefix("/auth")->group(function () {
         // login
         Route::post("/login", "Auth\LoginController@login")
             ->name("logEntry");
-        
+
+        // logout
+        Route::get("/logout", "Auth\LoginController@logout")
+            ->name("logout");
+
     });
 
 });
