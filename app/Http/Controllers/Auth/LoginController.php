@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -52,6 +53,17 @@ class LoginController extends Controller
         request()->merge([$field => $login]);
 
         return $field;
+    }
+
+    /**
+     * The user has logged out of the application.
+     *
+     * @param Request $request
+     * @return mixed
+     */
+    protected function loggedOut(Request $request)
+    {
+        return redirect(route('login'));
     }
 
 }
