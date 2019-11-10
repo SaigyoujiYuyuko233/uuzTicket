@@ -32,7 +32,7 @@
 
                 <div class="mdui-textfield-error">{{ $errors->first('username') }}</div>
             @else
-                <div class="mdui-textfield-helper">4-16个字符 / 字母大小写 数字 下/中划线</div>
+                <div class="mdui-textfield-helper">4-16个字符 / A-Za-z0-9 下/中划线</div>
             @endif
         </div>
 
