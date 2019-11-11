@@ -32,7 +32,7 @@ mysql ${CONN_ARG} -e "CREATE DATABASE ${DB_NAME}"
 php artisan migrate
 
 # start testing
-phpunit vendor/bin/phpunit
+phpunit
 
 # clean up - database
 mysql ${CONN_ARG} -e "DROP DATABASE ${DB_NAME}"
