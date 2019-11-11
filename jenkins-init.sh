@@ -6,7 +6,7 @@ yum -y install epel-release
 rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
-yum install php72w-cli php72w-common php72w-mbstring php72w-mcrypt php72w-mysql php72w-pdo -y
+yum install php72w-cli php72w-common php72w-mbstring php72w-mysql php72w-pdo php72w-xml -y
 
 
 # install phpunit
