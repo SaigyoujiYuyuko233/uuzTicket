@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # init vars
-export DB_HOST=mariadb.jenkins
+export DB_HOST=172.16.90.11
 export DB_PORT=3306
 export DB_USER=root
 export DB_PASS=secrets
