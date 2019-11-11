@@ -26,7 +26,8 @@ cp .env.jenkins .env
 composer install --no-interaction --prefer-dist --no-suggest
 
 # create database
-mysql ${CONN_ARG} -e "CREATE DATABASE ${DB_NAME}"
+mysql ${CONN_ARG} -e "DROP DATABASE IF EXISTS ${DB_NAME}"
+mysql ${CONN_ARG} -e "CREATE DATABASE IF NOT EXISTS ${DB_NAME}"
 
 # init mysql db
 php artisan migrate
@@ -35,6 +36,6 @@ php artisan migrate
 phpunit
 
 # clean up - database
-mysql ${CONN_ARG} -e "DROP DATABASE ${DB_NAME}"
+mysql ${CONN_ARG} -e "DROP DATABASE IF EXISTS ${DB_NAME}"
 
 echo -e "\n Finish build!"
