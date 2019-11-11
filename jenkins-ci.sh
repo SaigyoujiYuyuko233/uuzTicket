@@ -13,7 +13,7 @@ export CONN_ARG="-h ${DB_HOST} -P ${DB_PORT} -u${DB_USER} -p${DB_PASS}"
 
 
 # print build info
-echo -e "\n${JOB_NAME} ${GIT_LOCAL_BRANCH:0:6} | Build ${GIT_COMMIT} ${BUILD_NUMBER}\n"
+echo -e "\n${JOB_NAME} ${GIT_BRANCH} | Build ${GIT_COMMIT:0:6} ${BUILD_NUMBER}\n"
 
 php -v
 composer -V
