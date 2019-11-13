@@ -17,7 +17,7 @@
 
 
 @section("form")
-    <form action="{{ route("auth.do.register") }}" method="post">
+    <form action="{{ route("auth.register.handle") }}" method="post">
         {{ csrf_field() }}
 
         <div class="mdui-textfield mdui-textfield-floating-label" id="username-field">
@@ -69,7 +69,7 @@
 
         </div>
 
-        <a href="{{ route('auth.view.login') }}" class="tips-text mdui-float-left">已有账号? 戳我登陆</a>
+        <a href="{{ route('auth.login') }}" class="tips-text mdui-float-left">已有账号? 戳我登陆</a>
 
         <button class="submit mdui-btn mdui-btn-block mdui-color-pink-400 mdui-ripple" type="submit">注册</button>
     </form>

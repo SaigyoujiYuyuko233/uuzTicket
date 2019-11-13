@@ -10,28 +10,16 @@
 |
 */
 
-
 // view sections
 Route::group(['middleware' => 'guest'], function () {
 
     // register pages
-    Route::get("/register", 'RegisterController@showRegistrationForm')->name('auth.view.register');
-
-    // login pages
-    Route::get("/login", 'LoginController@showLoginForm')->name('auth.view.login');
-
-});
-
-// post sections
-Route::prefix("/do")->group(function () {
+    Route::get("/register", 'RegisterController@showRegistrationForm')->name('auth.register');
+    Route::get("/login", 'LoginController@showLoginForm')->name('auth.login');
 
     // registry
-    Route::post("/register", "RegisterController@register")->name("auth.do.register");
-
-    // login
-    Route::post("/login", "LoginController@login")->name("auth.do.login");
-
-    // logout
-    Route::get("/logout", "LoginController@logout")->name("auth.do.logout");
+    Route::post("/register", "RegisterController@register")->name("auth.register.handle");
+    Route::post("/login", "LoginController@login")->name("auth.login.handle");
+    Route::get("/logout", "LoginController@logout")->name("auth.logout.handle");
 
 });
