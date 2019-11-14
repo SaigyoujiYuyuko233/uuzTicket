@@ -15,7 +15,7 @@
 
 
 @section("form")
-    <form method="post" action="{{ route('auth.login.handle') }}">
+    <form method="post" action="{{ route('auth.login') }}">
         {{ csrf_field() }}
 
         <div class="mdui-textfield mdui-textfield-floating-label" id="username-field">
@@ -47,7 +47,7 @@
             @endif
         </div>
 
-        <a href="{{ route('auth.register') }}" class="tips-text mdui-float-left">没有账号? 戳我注册</a>
+        <a href="{{ route('auth.showRegistrationForm') }}" class="tips-text mdui-float-left">没有账号? 戳我注册</a>
         <!--TODO: reset password url-->
         <a href="" class="tips-text mdui-float-right" style="margin-left: 0;">找回密码</a>
 
