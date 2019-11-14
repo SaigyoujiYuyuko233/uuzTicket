@@ -6,9 +6,9 @@ options:
   cd-printer-anybar: false
   cd-printer-anybar-port: 1738
 markers:
-  cd-pass: "❀︎ "
-  cd-fail: "× "
-  cd-error: "● "
-  cd-skipped: "=> "
-  cd-incomplete: "∅ "
-  cd-risky: "⌽ "
+  cd-pass: "\u2714︎ "
+  cd-fail: "\u2718 "
+  cd-error: "\u25cf "
+  cd-skipped: "\\u2192 "
+  cd-incomplete: "\u2205 "
+  cd-risky: "! "
