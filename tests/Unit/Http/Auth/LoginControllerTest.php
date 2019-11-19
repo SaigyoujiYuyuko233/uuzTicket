@@ -4,6 +4,7 @@ namespace Tests\Unit\Http\Auth;
 
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Auth;
 use Tests\TestCase;
 
 /**
@@ -29,22 +30,22 @@ class LoginControllerTest extends TestCase
 
 
     /**
-     * 测试注册
+     * 测试登录
      *
-     * @term register
+     * @term login
      * @return void
      */
-    public function testRegister(){
+    public function testLogin(){
 
         // user info
         $user = array(
-            'username' => 'Yuyuko',
-            'password' => '123123123',
+            'username' => env('TEST_USER'),
+            'password' => env('TEST_USER_PASSWORD'),
             'email' => 'testmail@uuz.org'
         );
 
-        $res = $this->post(route('auth.register'), $user);
-        $res->assertStatus(302);
+        $res = $this->post(route('auth.login'), $user);
+        $res->assertRedirect(route('tickets.index'));
 
     }
 
