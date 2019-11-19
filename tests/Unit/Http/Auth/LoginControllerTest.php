@@ -2,9 +2,7 @@
 
 namespace Tests\Unit\Http\Auth;
 
-use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Auth;
 use Tests\TestCase;
 
 /**
@@ -28,7 +26,6 @@ class LoginControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
-
     /**
      * 测试登录
      *
@@ -46,7 +43,6 @@ class LoginControllerTest extends TestCase
 
         $res = $this->post(route('auth.login'), $user);
         $res->assertRedirect(route('tickets.index'));
-
     }
 
 }
