@@ -17,11 +17,17 @@ class AppServiceProvider extends ServiceProvider
         // load the debugging env support
         if ($this->app->environment() == 'local' || config('APP_DEBUG') == false){
 
-            // register
+            /*
+             * register
+             */
+
+            // debug thins
             $this->app->register('Barryvdh\Debugbar\ServiceProvider');
             $this->app->register('Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
 
-            // alias
+            /*
+             * alias
+             */
             $this->app->alias('Debugbar', 'Barryvdh\Debugbar\Facade');
         }
 
