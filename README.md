@@ -2,7 +2,9 @@
 ![banner](banner.png)
 
 ![ci](http://jenkins.uuzdream.cn:8000/buildStatus/icon?job=uuzTicket&style=flat-square)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f184ab0c9374115a81e47148a60cd82)](https://www.codacy.com/manual/SaigyoujiYuyuko233/uuzTicket?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SaigyoujiYuyuko233/uuzTicket&amp;utm_campaign=Badge_Grade&style=flat-square)
 [![codecov](https://codecov.io/gh/SaigyoujiYuyuko233/uuzTicket/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/SaigyoujiYuyuko233/uuzTicket)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/9f184ab0c9374115a81e47148a60cd82)](https://www.codacy.com/manual/SaigyoujiYuyuko233/uuzTicket?utm_source=github.com&utm_medium=referral&utm_content=SaigyoujiYuyuko233/uuzTicket&utm_campaign=Badge_Coverage)
 ![License](https://img.shields.io/badge/License-GPLv3-green?style=flat-square)
 ![CodeStyle](https://img.shields.io/badge/Code%20Style-PSR-orange?style=flat-square)
 ![Framework](https://img.shields.io/badge/Framework-Laravel%205.8-red?style=flat-square)
