@@ -11,6 +11,13 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * set the name of session token
+     *
+     * @var string
+     */
+    protected $rememberTokenName = 'auth_token';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
