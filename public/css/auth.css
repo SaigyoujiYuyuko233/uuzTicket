@@ -24,10 +24,10 @@
 
 .form-cover .form .submit {
     margin-top: 4px;
+    margin-left: 54px;
     border-radius: 4px;
 
     width: calc(100% - 56px);
-    float: right;
 }
 
 .form-cover .form .tips-text {
@@ -42,6 +42,11 @@
     opacity: 0.95;
     border-bottom: 1800px solid rgba(255, 255, 255, 1);
     border-left: 140px solid transparent;
+}
+
+.copyright {
+    margin-top: 5px;
+    margin-left: 54px;
 }
 
 @media only screen and (max-width: 667px) {

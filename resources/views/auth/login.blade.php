@@ -51,7 +51,6 @@
         <!--TODO: reset password url-->
         <a href="" class="tips-text mdui-float-right" style="margin-left: 0;">找回密码</a>
 
-        <button class="submit mdui-btn mdui-btn-block mdui-color-pink-400 mdui-ripple" type="submit">登陆</button>
-
+        <button class="submit mdui-btn mdui-color-pink-400 mdui-ripple" type="submit">登录</button>
     </form>
 @endsection
