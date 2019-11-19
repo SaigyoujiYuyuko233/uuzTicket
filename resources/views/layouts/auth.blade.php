@@ -27,9 +27,12 @@
 
     <div class="form mdui-center mdui-typo">
         <div class="form-title"> @yield('form-title') </div>
+        @yield("form")
 
-            @yield("form")
-
+        <div class="copyright">
+            This site is using <a href="https://github.com/SaigyoujiYuyuko233/uuzTicket">uuzTicket</a><br/>
+            <a href="https://github.com/SaigyoujiYuyuko233/uuzTicket">uuzTicket</a> is under GPLv3 license
+        </div>
     </div>
 
 </div>
