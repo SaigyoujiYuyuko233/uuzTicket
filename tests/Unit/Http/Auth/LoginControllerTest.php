@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Http\Auth;
 
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -34,15 +35,21 @@ class LoginControllerTest extends TestCase
      */
     public function testLogin(){
 
-        // user info
-        $user = array(
+        $user = factory(User::class)->create([
             'username' => env('TEST_USER'),
-            'password' => env('TEST_USER_PASSWORD'),
+            'email' => 'testmail@uuz.org',
+        ]);
+
+        // user info
+        $post = array(
+            'username' => env('TEST_USER'),
+            'password' => 'password',
             'email' => 'testmail@uuz.org'
         );
 
-        $res = $this->post(route('auth.login'), $user);
+        $res = $this->post(route('auth.login'), $post);
         $res->assertRedirect(route('tickets.index'));
+        $this->assertAuthenticatedAs($user);
     }
 
 }

@@ -29,7 +29,6 @@
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
         <server name="TEST_USER" value="YuyukoTest"/>
-        <server name="TEST_USER_PASSWORD" value="123123123"/>
 
     </php>
 </phpunit>

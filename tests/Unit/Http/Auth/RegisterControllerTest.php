@@ -4,7 +4,6 @@ namespace Tests\Unit\Http\Auth;
 
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Auth;
 use Tests\TestCase;
 
 /**
@@ -40,7 +39,7 @@ class RegisterControllerTest extends TestCase
         // user info
         $user = array(
             'username' => env('TEST_USER'),
-            'password' => env('TEST_USER_PASSWORD'),
+            'password' => 'password',
             'email' => 'testmail@uuz.org'
         );
 
