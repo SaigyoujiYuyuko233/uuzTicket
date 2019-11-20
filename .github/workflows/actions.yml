@@ -3,22 +3,29 @@ name: uuzTicket-Actions
 on: [push]
 
 jobs:
-  laravel-tests:
+  Unit-Test:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v1
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-    - name: Generate key
-      run: php artisan key:generate
-    - name: Create Database
+
+    - name: Init laravel
       run: |
+        php -r "file_exists('.env') || copy('.env.example', '.env');"
+        composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist'
+        php artisan key:generate
         mkdir -p database
         touch database/database.sqlite
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
+
+    - name: Starting unit test
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: vendor/bin/phpunit
+      run: vendor/bin/phpunit --coverage-clover=coverage.xml
+
+    - name: Code coverage reports
+      uses: codecov/codecov-action@v1
+      with:
+        - token: ${{ secrets.CODECOV_TOKEN }}
+      run: |
+        vendor/bin/codacycoverage clover ./coverage.xml
