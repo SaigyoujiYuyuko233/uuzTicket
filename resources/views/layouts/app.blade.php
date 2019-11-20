@@ -37,7 +37,7 @@
         </div>
 
         <a href="" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
-        <a href="{{ route('logout') }}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons iconfont icon-log-out"></i></a>
+        <a href="{{ route('auth.logout') }}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons iconfont icon-log-out"></i></a>
 
     </div>
 
