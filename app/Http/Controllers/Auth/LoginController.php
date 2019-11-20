@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/tickets';
 
     /**
      * Create a new controller instance.
@@ -63,7 +63,7 @@ class LoginController extends Controller
      */
     protected function loggedOut(Request $request)
     {
-        return redirect(route('login'));
+        return redirect(route('auth.showLoginForm'));
     }
 
 }
