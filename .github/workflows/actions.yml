@@ -26,7 +26,7 @@ jobs:
     - name: Code coverage reports - Codecov
       uses: codecov/codecov-action@v1
       with:
-        - token: ${{ secrets.CODECOV_TOKEN }}
+        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Code coverage reports - Codacy
       run: vendor/bin/codacycoverage clover ./coverage.xml
