@@ -58,8 +58,14 @@ class RouteServiceProvider extends ServiceProvider
             ->prefix('/auth')
             ->group(base_path('routes/auth.php'));
 
-        // base
-        Route::middleware('web')
+        // tickets
+        Route::middleware(['web', 'auth'])
+            ->namespace($this->namespace . '\Tickets')
+            ->prefix('/tickets')
+            ->group(base_path('routes/tickets.php'));
+
+        // tickets
+        Route::middleware(['web'])
             ->namespace($this->namespace)
             ->group(base_path('routes/base.php'));
 

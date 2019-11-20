@@ -10,6 +10,5 @@
 |
 */
 
-Route::get('/', function () {
-    return 'work in process';
-})->middleware(['auth'])->name('tickets.index');
+// root path redirect to tickets.index
+Route::get('/', 'Tickets\ShowController@rootRedirection')->name('tickets.rootRedirection')->middleware('auth');
