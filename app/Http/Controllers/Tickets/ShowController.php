@@ -14,7 +14,7 @@ class ShowController extends Controller
      *
      * @return string
      */
-    public function rootRedirection() { return $this->index(); }
+    public function rootRedirection() { return redirect(route('tickets.index')); }
 
     /**
      * 展示工单
