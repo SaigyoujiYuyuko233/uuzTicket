@@ -61,10 +61,9 @@ class LoginController extends Controller
     /**
      * The user has logged out of the application.
      *
-     * @param Request $request
      * @return mixed
      */
-    protected function loggedOut(Request $request)
+    protected function loggedOut()
     {
         return redirect(route('auth.showLoginForm'));
     }
