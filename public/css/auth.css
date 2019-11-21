@@ -50,7 +50,7 @@
 }
 
 @media only screen and (max-width: 667px) {
-    .form-cover{
+    .form-cover {
         width: 100%;
     }
 
@@ -60,16 +60,20 @@
 
     .form-cover .form .submit {
         border-radius: 4px;
-
+        margin-left: 0;
         width: 100%;
     }
 
     .form-cover .form .tips-text {
         padding-top: 24px;
-        margin-left: 0 !important;
+        margin-left: 0;
     }
 
-    .triangle{
+    .triangle {
         display: none;
+    }
+
+    .copyright {
+        margin-left: 0;
     }
 }
