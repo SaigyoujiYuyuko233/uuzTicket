@@ -92,8 +92,8 @@ class LoginControllerTest extends TestCase
     public function testWrongPassword()
     {
 
-        // user
-        $user = factory(User::class)->create([
+        // create user
+        factory(User::class)->create([
             'username' => env('TEST_USER'),
             'email' => 'testmail@uuz.org',
         ]);
