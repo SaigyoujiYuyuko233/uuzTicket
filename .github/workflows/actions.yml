@@ -16,6 +16,17 @@ jobs:
         php artisan key:generate
         mkdir -p database
         touch database/database.sqlite
+        
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+    - uses: actions/cache@v1
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
 
     - name: Starting unit test
       env:
@@ -23,10 +34,3 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
-    - name: Code coverage reports - Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-
-    - name: Code coverage reports - Codacy
-      run: vendor/bin/codacycoverage clover ./coverage.xml
