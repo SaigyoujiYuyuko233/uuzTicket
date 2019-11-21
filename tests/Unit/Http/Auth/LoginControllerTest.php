@@ -43,13 +43,24 @@ class LoginControllerTest extends TestCase
         // user info
         $post = array(
             'username' => env('TEST_USER'),
-            'password' => 'password',
-            'email' => 'testmail@uuz.org'
+            'password' => 'password'
+        );
+
+        // login using username
+        $res = $this->post(route('auth.login'), $post);
+        $res->assertRedirect(route('tickets.index'));
+        $this->assertAuthenticatedAs($user);
+
+        // login using email
+        $post = array(
+            'username' => 'testmail@uuz.org',
+            'password' => 'password'
         );
 
         $res = $this->post(route('auth.login'), $post);
         $res->assertRedirect(route('tickets.index'));
         $this->assertAuthenticatedAs($user);
+
     }
 
 }
