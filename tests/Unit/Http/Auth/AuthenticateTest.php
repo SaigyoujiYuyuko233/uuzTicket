@@ -27,7 +27,8 @@ class AuthenticateTest extends TestCase
      * @term: middleware - redirectTo
      * @return void
      */
-    public function testAuthedRedirection() {
+    public function testAuthedRedirection()
+    {
         $user = factory(User::class)->create();
 
         // login form
@@ -37,6 +38,22 @@ class AuthenticateTest extends TestCase
         // reg form
         $res = $this->actingAs($user)->get(route('auth.showRegistrationForm'));
         $res->assertRedirect(route('tickets.index'));
+    }
+
+    /**
+     * 已登录用户访问测试
+     *
+     * @term middleware - redirectTo
+     */
+    public function testUserAccess()
+    {
+        $user = factory(User::class)->create();
+
+        $res = $this->actingAs($user)->get(route('tickets.index'));
+        $res->assertViewIs('tickets.index');
+        $res->assertStatus(200);
+        $res->assertSuccessful();
+
     }
 
 }
