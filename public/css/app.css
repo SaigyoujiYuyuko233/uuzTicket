@@ -2,6 +2,7 @@
 
 .user-info {
     padding-left: 10px;
+    display: block;
 }
 
 .user-info p {
