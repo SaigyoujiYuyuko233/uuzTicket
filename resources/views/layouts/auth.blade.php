@@ -12,7 +12,7 @@
     <link href="{{ asset("/favicon.ico") }}" rel="icon">
     <link href="https://cdn.bootcss.com/mdui/0.4.3/css/mdui.min.css" rel="stylesheet">
 
-    <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/auth/form.css') }}" rel="stylesheet">
 
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 
