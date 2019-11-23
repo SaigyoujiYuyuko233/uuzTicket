@@ -59,7 +59,7 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/auth.php'));
 
         // tickets
-        Route::middleware(['web', 'auth'])
+        Route::middleware(['web', 'auth', 'verified'])
             ->namespace($this->namespace . '\Tickets')
             ->prefix('/tickets')
             ->group(base_path('routes/tickets.php'));
