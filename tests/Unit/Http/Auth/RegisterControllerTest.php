@@ -37,7 +37,6 @@ class RegisterControllerTest extends TestCase
      */
     public function testRegister()
     {
-
         // user info
         $user = array(
             'username' => env('TEST_USER'),
@@ -48,7 +47,6 @@ class RegisterControllerTest extends TestCase
         // post
         $res = $this->post(route('auth.register'), $user);
         $res->assertRedirect(route('tickets.index'));
-
     }
 
     /**
@@ -59,7 +57,6 @@ class RegisterControllerTest extends TestCase
      */
     public function testUserRedirect()
     {
-
         // auth user
         $user = factory(User::class)->make();
 
