@@ -63,9 +63,6 @@ class RegisterControllerTest extends TestCase
         $response = $this->actingAs($user)->get(route('auth.showRegistrationForm'));
         $response->assertStatus(302);
         $response->assertRedirect(route('tickets.index'));
-
-        // TODO: 完成 '我的工单' 后 添加模板验证
-        // $response->assertViewIs('auth.register');
     }
 
 }
