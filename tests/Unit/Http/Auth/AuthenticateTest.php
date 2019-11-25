@@ -16,7 +16,8 @@ class AuthenticateTest extends TestCase
      * @term: middleware - redirectTo
      * @return void
      */
-    public function testRedirection() {
+    public function testRedirection()
+    {
         $res = $this->get(route('tickets.index'));
         $res->assertRedirect(route('auth.showLoginForm'));
     }

@@ -22,7 +22,8 @@ class RegisterControllerTest extends TestCase
      * @term showRegistrationForm
      * @return void
      */
-    public function testAccess() {
+    public function testAccess()
+    {
         $response = $this->get(route('auth.showRegistrationForm'));
         $response->assertStatus(200);
         $response->assertViewIs('auth.register');
@@ -34,7 +35,8 @@ class RegisterControllerTest extends TestCase
      * @term register
      * @return void
      */
-    public function testRegister(){
+    public function testRegister()
+    {
 
         // user info
         $user = array(
@@ -55,7 +57,8 @@ class RegisterControllerTest extends TestCase
      * @term middleware: guest
      * @return void
      */
-    public function testUserRedirect() {
+    public function testUserRedirect()
+    {
 
         // auth user
         $user = factory(User::class)->make();

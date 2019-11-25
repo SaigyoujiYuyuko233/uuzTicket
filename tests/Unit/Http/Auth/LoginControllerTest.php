@@ -23,7 +23,8 @@ class LoginControllerTest extends TestCase
      * @term showLoginForm
      * @return void
      */
-    public function testAccess() {
+    public function testAccess()
+    {
         $response = $this->get(route('auth.showLoginForm'));
         $response->assertStatus(200);
     }
@@ -34,7 +35,8 @@ class LoginControllerTest extends TestCase
      * @term login
      * @return void
      */
-    public function testLogin(){
+    public function testLogin()
+    {
 
         $user = factory(User::class)->create([
             'username' => env('TEST_USER'),
