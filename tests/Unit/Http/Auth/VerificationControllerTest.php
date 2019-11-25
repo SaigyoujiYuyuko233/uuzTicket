@@ -17,7 +17,8 @@ class VerificationControllerTest extends TestCase
      * @term middleware: EmailIsVerified
      * @return void
      */
-    public function testUnVerifyRedirection() {
+    public function testUnVerifyRedirection()
+    {
 
         $user = factory(User::class)->create([
             'email_verified_at' => null
