@@ -3,13 +3,16 @@
 namespace Tests\Unit\Http\Auth;
 
 use App\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use MailThief\Facades\MailThief;
+use MailThief\Testing\InteractsWithMail;
 use Tests\TestCase;
 
 class VerificationControllerTest extends TestCase
 {
 
-    use RefreshDatabase;
+    use RefreshDatabase, InteractsWithMail;
 
     /**
      * 测试未验证重定向
@@ -41,6 +44,23 @@ class VerificationControllerTest extends TestCase
         $res = $this->actingAs($user)->get(route('auth.verification.notice'));
         $res->assertRedirect(route('tickets.index'));
         $res->assertStatus(302);
+    }
+
+    /**
+     * 测试邮件发送
+     */
+    public function testEmailSend()
+    {
+        // register a user
+        $user = factory(User::class)->create([
+            'email_verified_at' => null
+        ]);
+
+        // run event
+        event(new Registered($user));
+
+        // get the mail
+        $this->seeMessageFor($user->email);
     }
 
 }

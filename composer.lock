@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b63189fbc5aa4898d3353c3f8a0bcb72",
+    "content-hash": "697648c0b02e2cbb1bd0c5b12c1c101d",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -6587,6 +6587,54 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2019-06-13T22:48:21+00:00"
+        },
+        {
+            "name": "tightenco/mailthief",
+            "version": "v0.3.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/mailthief.git",
+                "reference": "9a8c2443be2b3d77753596f70ae6cd879b5b26a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/mailthief/zipball/9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
+                "reference": "9a8c2443be2b3d77753596f70ae6cd879b5b26a6",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "illuminate/mail": "5.*",
+                "illuminate/view": "5.*"
+            },
+            "require-dev": {
+                "laravel/framework": ">=5.0 <5.5",
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MailThief\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "description": "A fake Mailer for Laravel applications that takes the pain out of testing mail.",
+            "time": "2018-02-10T04:17:52+00:00"
         },
         {
             "name": "webmozart/assert",
