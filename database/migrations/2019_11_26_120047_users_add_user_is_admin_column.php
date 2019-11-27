@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUserIsAdmin extends Migration
+class UsersAddUserIsAdminColumn extends Migration
 {
     /**
      * Run the migrations.
