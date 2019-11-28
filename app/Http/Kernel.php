@@ -79,6 +79,7 @@ class Kernel extends HttpKernel
         'signed' => ValidateSignature::class,
         'throttle' => ThrottleRequests::class,
         'verified' => Middleware\EmailIsVerified::class,
+        'auth.admin' => Middleware\AuthWithAdminPermission::class,
     ];
 
     /**
