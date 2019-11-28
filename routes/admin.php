@@ -9,6 +9,5 @@
 |
 */
 
-Route::get('/dashboard', function () {
-    return 'work in process';
-});
+Route::get('/', 'DashboardController@rootRedirection');
+Route::get('/dashboard', 'DashboardController@show')->name('admin.dashboard');
