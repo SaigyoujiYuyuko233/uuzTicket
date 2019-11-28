@@ -39,8 +39,10 @@
 
         <div class="mdui-toolbar-spacer mdui-hidden-sm-up"></div>
 
-        <a href="" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
-        <a href="{{ route('auth.logout') }}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons iconfont icon-log-out"></i></a>
+
+        <!-- TODO: 工单搜索 -->
+        <a href="" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '搜索工单'}"><i class="mdui-icon material-icons">search</i></a>
+        <a href="{{ route('auth.logout') }}" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '退出登录'}"><i class="mdui-icon material-icons iconfont icon-log-out"></i></a>
 
     </div>
 
