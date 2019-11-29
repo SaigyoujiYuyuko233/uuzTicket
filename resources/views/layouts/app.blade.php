@@ -15,8 +15,6 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-
     @yield('header')
 </head>
 
@@ -25,7 +23,7 @@
 <div class="mdui-appbar ">
     <div class="mdui-toolbar mdui-color-pink-400">
 
-        <a href="" class="mdui-btn mdui-btn-icon mdui-hidden-xs"><i class="mdui-icon material-icons">menu</i></a>
+        <a href="" class="mdui-btn mdui-btn-icon mdui-hidden-xs"><i class="mdui-icon material-icons">brightness_high</i></a>
         <a href="" class="mdui-typo-title mdui-hidden-xs">@yield('title') - {{ env("APP_NAME") }}</a>
 
         <div class="mdui-toolbar-spacer mdui-hidden-xs"></div>
@@ -39,7 +37,11 @@
 
         <div class="mdui-toolbar-spacer mdui-hidden-sm-up"></div>
 
-
+        @if(Auth::user()->is_admin == true)
+            <a href="{{ route('admin.dashboard') }}" mdui-tooltip="{content: '管理员面板'}" class="mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">settings</i>
+            </a>
+        @endif
         <!-- TODO: 工单搜索 -->
         <a href="" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '搜索工单'}"><i class="mdui-icon material-icons">search</i></a>
         <a href="{{ route('auth.logout') }}" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '退出登录'}"><i class="mdui-icon material-icons iconfont icon-log-out"></i></a>
@@ -57,6 +59,8 @@
     @yield('content')
 </div>
 
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/mdui/0.4.3/js/mdui.js"></script>
 </body>
 
 </html>
