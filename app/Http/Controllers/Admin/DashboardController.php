@@ -14,7 +14,7 @@ class DashboardController extends Controller
 
     public function show()
     {
-        return 'work in process';
+        return view('layouts.admin');
     }
 
 }
