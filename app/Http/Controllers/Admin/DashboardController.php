@@ -9,7 +9,7 @@ class DashboardController extends Controller
 
     public function rootRedirection()
     {
-        return redirect('admin.dashboard');
+        return redirect(route('admin.dashboard'));
     }
 
     public function show()
