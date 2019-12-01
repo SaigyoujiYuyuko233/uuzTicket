@@ -12,10 +12,12 @@
 namespace Tests\Unit\Http\Admin;
 
 use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class DashboardControllerTest extends TestCase
 {
+    use RefreshDatabase;
 
     public function testRootRedirection()
     {

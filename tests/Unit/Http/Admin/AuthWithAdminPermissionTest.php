@@ -12,10 +12,13 @@
 namespace Tests\Unit\Http\Admin;
 
 use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class AuthWithAdminPermissionTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testRedirection()
     {
         // is_admin == false
