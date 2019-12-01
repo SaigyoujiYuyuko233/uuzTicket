@@ -144,8 +144,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
-      <span class="brand-text font-weight-light align-content-center">{{ env("APP_NAME") }}</span>
+    <a href="{{ route('tickets.index') }}" class="brand-link text-center">
+      <span class="brand-text font-weight-light">{{ env("APP_NAME") }}</span>
     </a>
 
     <!-- Sidebar -->
